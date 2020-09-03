@@ -19,7 +19,7 @@ client.on('message', msg => {
             msg.reply('唔要喎!');
         } 
 
-        if (msg.content.startsWith("!Ask Yoru Sleep") {
+        if (msg.content.startsWith("!Ask Yoru Sleep")) {
             alarm = true;
             msg.reply('OJBK~');
         }
