@@ -12,14 +12,14 @@ client.on('ready', () => {
 client.on('message', msg => {
     if (!msg.author.bot) {
         console.log(msg.content);
-        if (msg.content === "!Let Yoru Take A Rest" && msg.author.userID == '206003875092627456') {
+        if (msg.content.startsWith("!Let Yoru Take A Rest") && msg.author.userID == '206003875092627456') {
             alarm = false;
             msg.reply('咁好啦...');
-        } else if (msg.content === "!Let Yoru Take A Rest" && !msg.author.userID == '206003875092627456') {
+        } else if (msg.content.startsWith("!Let Yoru Take A Rest") && !msg.author.userID == '206003875092627456') {
             msg.reply('唔要喎!');
         } 
 
-        if (msg.content == '!Ask Yoru Sleep') {
+        if (msg.content.startsWith("!Ask Yoru Sleep") {
             alarm = true;
             msg.reply('OJBK~');
         }
