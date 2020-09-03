@@ -12,14 +12,15 @@ client.on('ready', () => {
 client.on('message', msg => {
     if (!msg.author.bot) {
         console.log(msg.content);
-        if (msg.content.startsWith("!Let Yoru Take A Rest") && msg.author.userID == '206003875092627456') {
+        if (msg.content === ("!Let Yoru Take A Rest") && msg.author.id == '206003875092627456') {
+            msg.
             alarm = false;
             msg.reply('咁好啦...');
-        } else if (msg.content.startsWith("!Let Yoru Take A Rest") && !msg.author.userID == '206003875092627456') {
+        } else if (msg.content === ("!Let Yoru Take A Rest") && !msg.author.id == '206003875092627456') {
             msg.reply('唔要喎!');
         } 
 
-        if (msg.content.startsWith("!Ask Yoru Sleep")) {
+        if (msg.content === ("!Ask Yoru Sleep")) {
             alarm = true;
             msg.reply('OJBK~');
         }
@@ -29,7 +30,7 @@ client.on('message', msg => {
         else 
             console.log('Yoru is offline...');
 
-        if (msg.author.userID == yoru && alarm) {
+        if (msg.author.id == yoru && alarm) {
             msg.channel.send("瞓啦<@" + yoru + ">~ 仲傾~")
         }
     }
@@ -42,7 +43,7 @@ client.on('presenceUpdate', (oldS, newS) => {
 });
 
 client.on('guildMemberAdd', member => {
-    client.channels.cache.get('750816855240736869').send("歡迎<@" + member.userID + ">加入青口組做新丁:DDD~");
+    client.channels.cache.get('750816855240736869').send("歡迎<@" + member.id + ">加入青口組做新丁:DDD~");
     member.roles.set(['750795787092623470']);
 });
 
