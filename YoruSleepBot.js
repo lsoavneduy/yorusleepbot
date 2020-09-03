@@ -2,7 +2,8 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const yoru = '740408209965187093';
 const token = process.env.TOKEN;
-var alarm = true;
+client.map = new Map();
+client.map.set('alarm', true);
 
 client.on('ready', () => {
     console.log('I Am Ready To Yoru Sleep :3');
