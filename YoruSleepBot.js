@@ -11,10 +11,11 @@ client.on('ready', () => {
 
 client.on('message', msg => {
     if (!msg.author.bot) {
-        if (msg.content == "!Let Yoru Take A Rest" && msg.author.userID == '206003875092627456') {
+        console.log(msg.content);
+        if (msg.content === "!Let Yoru Take A Rest" && msg.author.userID == '206003875092627456') {
             alarm = false;
             msg.reply('咁好啦...');
-        } else if (msg.content == "!Let Yoru Take A Rest" && !msg.author.userID == '206003875092627456') {
+        } else if (msg.content === "!Let Yoru Take A Rest" && !msg.author.userID == '206003875092627456') {
             msg.reply('唔要喎!');
         } 
 
