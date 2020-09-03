@@ -15,23 +15,23 @@ client.on('message', msg => {
         console.log(msg.content);
         if (msg.content === ("!Let Yoru Take A Rest") && msg.author.id == '206003875092627456') {
             msg.
-            alarm.set(false);
+            client.map.set('alarm', false);
             msg.reply('咁好啦...');
         } else if (msg.content === ("!Let Yoru Take A Rest") && !msg.author.id == '206003875092627456') {
             msg.reply('唔要喎!');
         } 
 
         if (msg.content === ("!Ask Yoru Sleep")) {
-            alarm.set(true);
+            client.map.set('alarm', true);
             msg.reply('OJBK~');
         }
         
-        if (client.users.cache.get(yoru).presence.status == 'online' && alarm)
+        if (client.users.cache.get(yoru).presence.status == 'online' && client.map.get('alarm'))
             client.channels.cache.get('750409993387507725').send("瞓啦<@" + yoru + ">~");
         else 
             console.log('Yoru is offline...');
 
-        if (msg.author.id == yoru && alarm) {
+        if (msg.author.id == yoru && client.map.get('alarm')) {
             msg.channel.send("瞓啦<@" + yoru + ">~ 仲傾~")
         }
     }
@@ -39,7 +39,7 @@ client.on('message', msg => {
 
 client.on('presenceUpdate', (oldS, newS) => {
     let yoru = '740408209965187093';
-    if (newS.userID == '740408209965187093' && newS.status == 'online' && alarm)
+    if (newS.userID == '740408209965187093' && newS.status == 'online' && client.map.get('alarm'))
         client.channels.cache.get('750409993387507725').send("<@" + yoru + ">今日早啲瞓啦~");
 });
 
