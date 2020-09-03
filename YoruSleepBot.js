@@ -28,6 +28,7 @@ client.on('presenceUpdate', (oldS, newS) => {
 });
 
 client.on('guildMemberAdd', member => {
+    client.channels.cache.get('750816855240736869').send("歡迎<@" + member.userID + ">加入青口組做新丁:DDD~");
     member.roles.set(['750795787092623470']);
 });
 
