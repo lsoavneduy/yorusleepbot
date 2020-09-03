@@ -15,6 +15,10 @@ client.on('message', msg => {
         else 
             console.log('Yoru is offline...');
     }
+
+    if (msg.author.userID == yoru) {
+        msg.channel.send("瞓啦<@" + yoru + ">~ 仲傾~")
+    }
 });
 
 client.on('presenceUpdate', (oldS, newS) => {
