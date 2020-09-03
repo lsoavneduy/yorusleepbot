@@ -14,14 +14,14 @@ client.on('message', msg => {
         console.log(msg.content);
         if (msg.content === ("!Let Yoru Take A Rest") && msg.author.id == '206003875092627456') {
             msg.
-            alarm = false;
+            alarm.set(false);
             msg.reply('咁好啦...');
         } else if (msg.content === ("!Let Yoru Take A Rest") && !msg.author.id == '206003875092627456') {
             msg.reply('唔要喎!');
         } 
 
         if (msg.content === ("!Ask Yoru Sleep")) {
-            alarm = true;
+            alarm.set(true);
             msg.reply('OJBK~');
         }
         
