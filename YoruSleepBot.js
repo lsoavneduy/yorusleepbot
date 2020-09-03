@@ -12,9 +12,7 @@ client.on('ready', () => {
 
 client.on('message', msg => {
     if (!msg.author.bot) {
-        console.log(msg.content);
         if (msg.content === ("!Let Yoru Take A Rest") && msg.author.id == '206003875092627456') {
-            msg.
             client.map.set('alarm', false);
             msg.reply('咁好啦...');
         } else if (msg.content === ("!Let Yoru Take A Rest") && !msg.author.id == '206003875092627456') {
