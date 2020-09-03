@@ -24,7 +24,7 @@ client.on('presenceUpdate', (oldS, newS) => {
 });
 
 client.on('guildMemberAdd', member => {
-    member.roles.set('750795787092623470');
+    member.roles.set(['750795787092623470']);
 });
 
 client.login(token);
