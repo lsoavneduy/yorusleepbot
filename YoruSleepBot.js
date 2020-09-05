@@ -12,7 +12,7 @@ client.on('ready', () => {
 
 client.on('message', msg => {
     if (!msg.author.bot) {
-        if (msg.content === ("!Let Yoru Take A Rest") && msg.author.id == '206003875092627456') {
+        /*if (msg.content === ("!Let Yoru Take A Rest") && msg.author.id == '206003875092627456') {
             client.map.set('alarm', false);
             msg.reply('咁好啦...');
         } else if (msg.content === ("!Let Yoru Take A Rest") && !msg.author.id == '206003875092627456') {
@@ -31,14 +31,14 @@ client.on('message', msg => {
 
         if (msg.author.id == yoru && client.map.get('alarm')) {
             msg.channel.send("瞓啦<@" + yoru + ">~ 仲傾~")
-        }
+        }*/
     }
 });
 
 client.on('presenceUpdate', (oldS, newS) => {
-    let yoru = '740408209965187093';
+    /*let yoru = '740408209965187093';
     if (newS.userID == '740408209965187093' && newS.status == 'online' && client.map.get('alarm'))
-        client.channels.cache.get('750409993387507725').send("<@" + yoru + ">今日早啲瞓啦~");
+        client.channels.cache.get('750409993387507725').send("<@" + yoru + ">今日早啲瞓啦~");*/
 });
 
 client.on('guildMemberAdd', member => {
